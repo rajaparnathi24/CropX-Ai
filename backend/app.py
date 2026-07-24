@@ -7,9 +7,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from database import engine, Base
 from config import settings
 from services.model_service import model_service
-from routers import auth, prediction, history, dashboard, profile, weather
+from routers import auth, prediction, history, dashboard, profile, weather, community
 
 # Configure Logging
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
@@ -54,6 +55,8 @@ app.include_router(history.router)
 app.include_router(dashboard.router)
 app.include_router(profile.router)
 app.include_router(weather.router)
+app.include_router(community.router)
+
 
 @app.get("/")
 def root_status():

@@ -9,11 +9,7 @@ interface AppLogoProps {
   onClick?: () => void;
 }
 
-const AppLogo = memo(function AppLogo({
-  size = 32,
-  className = '',
-  onClick,
-}: AppLogoProps) {
+const AppLogo = memo(function AppLogo({ size = 32, className = '', onClick }: AppLogoProps) {
   return (
     <div
       onClick={onClick}

@@ -67,3 +67,26 @@ export interface PredictResponse {
   preventiveMeasures: string[];
   season: IndianSeason;
 }
+
+export interface PostComment {
+  id: string;
+  postId: string;
+  authorName: string;
+  authorLocation: string;
+  content: string;
+  createdAt: string;
+}
+
+export interface CommunityPost {
+  id: string;
+  authorName: string;
+  authorLocation: string;
+  cropCategory: string;
+  title: string;
+  content: string;
+  imageUrl?: string;
+  likes: number;
+  commentsCount: number;
+  comments?: PostComment[];
+  createdAt: string;
+}

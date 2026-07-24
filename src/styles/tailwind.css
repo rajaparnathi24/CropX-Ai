@@ -258,3 +258,13 @@
     @apply bg-card text-muted-foreground border-border hover:border-primary hover:text-primary;
   }
 }
+
+/* Hide Next.js Dev Indicator Badge Overlay */
+nextjs-portal,
+#__next-build-watcher,
+[class*="nextjs-toast"],
+[data-nextjs-toast],
+[data-nextjs-dialog-overlay] {
+  display: none !important;
+}
+
