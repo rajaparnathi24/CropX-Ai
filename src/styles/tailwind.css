@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f1f8e9;
+  --foreground: #1b2a1b;
+  --primary: #2e7d32;
+  --primary-foreground: #ffffff;
+  --primary-light: #60ad5e;
+  --primary-container: #a5d6a7;
+  --primary-dark: #1b5e20;
+  --secondary: #f57f17;
+  --secondary-foreground: #ffffff;
+  --accent: #e8f5e9;
+  --accent-foreground: #1b5e20;
+  --muted: #e8f5e9;
+  --muted-foreground: #5a7a5a;
+  --card: #ffffff;
+  --card-foreground: #1b2a1b;
+  --border: #c8e6c9;
+  --input: #e8f5e9;
+  --ring: #2e7d32;
+  --radius: 16px;
+  --font-sans: var(--font-dm-sans), 'DM Sans', sans-serif;
+
+  /* Severity colors */
+  --severity-low: #388e3c;
+  --severity-low-bg: #e8f5e9;
+  --severity-medium: #f9a825;
+  --severity-medium-bg: #fff8e1;
+  --severity-high: #e65100;
+  --severity-high-bg: #fbe9e7;
+  --severity-critical: #c62828;
+  --severity-critical-bg: #ffebee;
+
+  /* Dark surface */
+  --surface-dark: #121a12;
+  --surface-dark-2: #1e2a1e;
+}
+
+.dark {
+  --background: #121a12;
+  --foreground: #e8f5e9;
+  --primary: #60ad5e;
+  --primary-foreground: #1b5e20;
+  --primary-light: #a5d6a7;
+  --primary-container: #2e7d32;
+  --primary-dark: #a5d6a7;
+  --secondary: #ffb74d;
+  --secondary-foreground: #1b2a1b;
+  --accent: #1e2a1e;
+  --accent-foreground: #a5d6a7;
+  --muted: #1e2a1e;
+  --muted-foreground: #7aab7a;
+  --card: #1e2a1e;
+  --card-foreground: #e8f5e9;
+  --border: #2e4a2e;
+  --input: #1e2a1e;
+  --ring: #60ad5e;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .text-hero-xl {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-shadow {
+    box-shadow:
+      0 2px 12px rgba(46, 125, 50, 0.08),
+      0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  .card-shadow-md {
+    box-shadow:
+      0 4px 20px rgba(46, 125, 50, 0.12),
+      0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .severity-low {
+    color: var(--severity-low);
+    background-color: var(--severity-low-bg);
+  }
+
+  .severity-medium {
+    color: var(--severity-medium);
+    background-color: var(--severity-medium-bg);
+  }
+
+  .severity-high {
+    color: var(--severity-high);
+    background-color: var(--severity-high-bg);
+  }
+
+  .severity-critical {
+    color: var(--severity-critical);
+    background-color: var(--severity-critical-bg);
+  }
+
+  .gradient-green {
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 40%, #60ad5e 100%);
+  }
+
+  .gradient-card-green {
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  }
+
+  .blob-primary {
+    background: radial-gradient(ellipse at center, rgba(96, 173, 94, 0.3) 0%, transparent 70%);
+    filter: blur(40px);
+  }
+
+  .scan-pulse {
+    animation: scanPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scanPulse {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.02);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.4s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stagger-1 {
+    animation-delay: 0ms;
+  }
+  .stagger-2 {
+    animation-delay: 80ms;
+  }
+  .stagger-3 {
+    animation-delay: 160ms;
+  }
+  .stagger-4 {
+    animation-delay: 240ms;
+  }
+  .stagger-5 {
+    animation-delay: 320ms;
+  }
+  .stagger-6 {
+    animation-delay: 400ms;
+  }
+
+  .health-score-ring {
+    stroke-dasharray: 251.2;
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 1.2s ease-out;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground font-semibold text-sm px-6 py-3 transition-all duration-150 hover:bg-primary-dark active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-primary text-primary font-semibold text-sm px-6 py-3 transition-all duration-150 hover:bg-accent active:scale-95 disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full text-muted-foreground font-medium text-sm px-4 py-2 transition-all duration-150 hover:bg-muted hover:text-foreground active:scale-95;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-border bg-input px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-150;
+  }
+
+  .card-base {
+    @apply rounded-2xl bg-card border border-border card-shadow p-5;
+  }
+
+  .severity-badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+
+  .nav-item-active {
+    @apply bg-accent text-primary font-semibold;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted-foreground font-medium transition-all duration-150 hover:bg-muted hover:text-foreground cursor-pointer;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium border transition-all duration-150 cursor-pointer;
+  }
+
+  .chip-active {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+
+  .chip-inactive {
+    @apply bg-card text-muted-foreground border-border hover:border-primary hover:text-primary;
+  }
+}
