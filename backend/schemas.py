@@ -85,9 +85,53 @@ class WeatherResponse(BaseModel):
     temperature: int
     humidity: int
     condition: str
+    icon: str = "partly-cloudy"
     rainfall: int
     windSpeed: int
     district: str
     state: str
     updatedAt: str
     forecast: List[WeatherForecastItem]
+
+
+# Community Schemas
+class CommentCreate(BaseModel):
+    authorName: str
+    authorLocation: str
+    content: str
+
+class CommentResponse(BaseModel):
+    id: str
+    postId: str
+    authorName: str
+    authorLocation: str
+    content: str
+    createdAt: datetime
+
+    class Config:
+        from_attributes = True
+
+class PostCreate(BaseModel):
+    authorName: str
+    authorLocation: str
+    cropCategory: str
+    title: str
+    content: str
+    imageUrl: Optional[str] = None
+
+class PostResponse(BaseModel):
+    id: str
+    authorName: str
+    authorLocation: str
+    cropCategory: str
+    title: str
+    content: str
+    imageUrl: Optional[str] = None
+    likes: int
+    commentsCount: int
+    comments: List[CommentResponse] = []
+    createdAt: datetime
+
+    class Config:
+        from_attributes = True
+

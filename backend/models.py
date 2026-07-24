@@ -41,3 +41,33 @@ class Scan(Base):
     date = Column(DateTime, default=datetime.utcnow, index=True)
 
     owner = relationship("User", back_populates="scans")
+
+
+class CommunityPost(Base):
+    __tablename__ = "community_posts"
+
+    id = Column(String, primary_key=True, default=generate_uuid, index=True)
+    author_name = Column(String, nullable=False)
+    author_location = Column(String, nullable=False)
+    crop_category = Column(String, nullable=False, index=True)
+    title = Column(String, nullable=False)
+    content = Column(Text, nullable=False)
+    image_url = Column(String, nullable=True)
+    likes = Column(Float, default=0)
+    created_at = Column(DateTime, default=datetime.utcnow, index=True)
+
+    comments = relationship("CommunityComment", back_populates="post", cascade="all, delete-orphan")
+
+
+class CommunityComment(Base):
+    __tablename__ = "community_comments"
+
+    id = Column(String, primary_key=True, default=generate_uuid, index=True)
+    post_id = Column(String, ForeignKey("community_posts.id"), nullable=False, index=True)
+    author_name = Column(String, nullable=False)
+    author_location = Column(String, nullable=False)
+    content = Column(Text, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    post = relationship("CommunityPost", back_populates="comments")
+

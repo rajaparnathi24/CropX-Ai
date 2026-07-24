@@ -105,7 +105,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         };
 
         const usersDbStr = localStorage.getItem(USERS_DB_KEY);
-        const usersDb: Array<User & { password: string }> = usersDbStr ? JSON.parse(usersDbStr) : [];
+        const usersDb: Array<User & { password: string }> = usersDbStr
+          ? JSON.parse(usersDbStr)
+          : [];
 
         if (usersDb.some((u) => u.email.toLowerCase() === userData.email.toLowerCase())) {
           setIsLoading(false);
