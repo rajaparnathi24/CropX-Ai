@@ -11,7 +11,7 @@ export default function WeatherCard() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const district = user?.district || 'Anand';
+  const district = user?.district || 'Junagadh';
   const state = user?.state || 'Gujarat';
 
   const fetchWeather = useCallback(async () => {
