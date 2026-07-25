@@ -3,7 +3,7 @@ import logging
 import numpy as np
 from fastapi import HTTPException, status
 from config import settings
-from class_names import PLANT_57_CLASSES, get_disease_details
+from class_names import PLANT_57_CLASSES, get_disease_details, get_crop_name
 from typing import Optional
 from preprocess import preprocess_image
 
@@ -122,9 +122,32 @@ class ModelService:
             ensemble_preds = all_predictions[0]
             logger.info(f"  Single model prediction (no ensemble averaging)")
 
-        # Step 4: Extract prediction (top prediction from ensemble)
-        top_idx = int(np.argmax(ensemble_preds))
-        confidence = float(ensemble_preds[top_idx]) * 100
+        # Step 4: Extract prediction
+        top_overall_idx = int(np.argmax(ensemble_preds))
+        overall_conf = float(ensemble_preds[top_overall_idx]) * 100
+
+        # Target crop filtering if explicitly requested by user (e.g. "Cotton", "Wheat", etc.)
+        if target_crop and target_crop.strip().lower() not in ["", "all", "select crop", "none"]:
+            t_crop = target_crop.strip().lower()
+            matching_indices = [
+                i for i, c in enumerate(PLANT_57_CLASSES)
+                if get_crop_name(c).lower() == t_crop or t_crop in get_crop_name(c).lower()
+            ]
+            if matching_indices:
+                top_crop_idx = max(matching_indices, key=lambda idx: ensemble_preds[idx])
+                crop_conf = float(ensemble_preds[top_crop_idx]) * 100
+                if crop_conf >= 15.0 or (overall_conf - crop_conf < 30.0):
+                    top_idx = top_crop_idx
+                    confidence = crop_conf
+                else:
+                    top_idx = top_overall_idx
+                    confidence = overall_conf
+            else:
+                top_idx = top_overall_idx
+                confidence = overall_conf
+        else:
+            top_idx = top_overall_idx
+            confidence = overall_conf
 
         if top_idx < len(PLANT_57_CLASSES):
             raw_class_name = PLANT_57_CLASSES[top_idx]
