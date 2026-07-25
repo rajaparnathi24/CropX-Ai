@@ -1,0 +1,1520 @@
+[
+  {
+    "raw": "Cotton___Aphids",
+    "name": "Cotton - Aphids",
+    "crop": "Cotton",
+    "severity": "medium",
+    "details": {
+      "crop": "Cotton",
+      "disease": "Cotton - Aphids",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of aphids detected on Cotton leaf surface.",
+        "Pattern is consistent with Cotton - Aphids."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Cotton___Army_worm",
+    "name": "Cotton - Army Worm",
+    "crop": "Cotton",
+    "severity": "medium",
+    "details": {
+      "crop": "Cotton",
+      "disease": "Cotton - Army Worm",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of army worm detected on Cotton leaf surface.",
+        "Pattern is consistent with Cotton - Army Worm."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Cotton___Bacterial_Blight",
+    "name": "Cotton - Bacterial Blight",
+    "crop": "Cotton",
+    "severity": "critical",
+    "details": {
+      "crop": "Cotton",
+      "disease": "Cotton - Bacterial Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of bacterial blight detected on Cotton leaf surface.",
+        "Pattern is consistent with Cotton - Bacterial Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Cotton___Healthy",
+    "name": "Healthy Cotton",
+    "crop": "Cotton",
+    "severity": "low",
+    "details": {
+      "crop": "Cotton",
+      "disease": "Healthy Cotton",
+      "severity": "low",
+      "symptoms": [
+        "Cotton foliage appears healthy with uniform green color and no visible lesions or discoloration."
+      ],
+      "recommendations": [
+        "Continue standard fertilization and irrigation schedule.",
+        "Perform routine monitoring for early pest/disease detection.",
+        "Maintain field hygiene and remove weeds regularly."
+      ],
+      "preventiveMeasures": [
+        "Weekly field scouting during active growth stages.",
+        "Maintain weed-free field perimeters.",
+        "Use balanced NPK fertilizers as per soil test recommendations."
+      ]
+    }
+  },
+  {
+    "raw": "Cotton___Powdery_Mildew",
+    "name": "Cotton - Powdery Mildew",
+    "crop": "Cotton",
+    "severity": "medium",
+    "details": {
+      "crop": "Cotton",
+      "disease": "Cotton - Powdery Mildew",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of powdery mildew detected on Cotton leaf surface.",
+        "Pattern is consistent with Cotton - Powdery Mildew."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Cotton___Target_spot",
+    "name": "Cotton - Target Spot",
+    "crop": "Cotton",
+    "severity": "medium",
+    "details": {
+      "crop": "Cotton",
+      "disease": "Cotton - Target Spot",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of target spot detected on Cotton leaf surface.",
+        "Pattern is consistent with Cotton - Target Spot."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Groundnut___early_leaf_spot",
+    "name": "Groundnut - Early Leaf Spot",
+    "crop": "Groundnut",
+    "severity": "medium",
+    "details": {
+      "crop": "Groundnut",
+      "disease": "Groundnut - Early Leaf Spot",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of early leaf spot detected on Groundnut leaf surface.",
+        "Pattern is consistent with Groundnut - Early Leaf Spot."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Groundnut___healthy leaf",
+    "name": "Healthy Groundnut",
+    "crop": "Groundnut",
+    "severity": "low",
+    "details": {
+      "crop": "Groundnut",
+      "disease": "Healthy Groundnut",
+      "severity": "low",
+      "symptoms": [
+        "Groundnut foliage appears healthy with uniform green color and no visible lesions or discoloration."
+      ],
+      "recommendations": [
+        "Continue standard fertilization and irrigation schedule.",
+        "Perform routine monitoring for early pest/disease detection.",
+        "Maintain field hygiene and remove weeds regularly."
+      ],
+      "preventiveMeasures": [
+        "Weekly field scouting during active growth stages.",
+        "Maintain weed-free field perimeters.",
+        "Use balanced NPK fertilizers as per soil test recommendations."
+      ]
+    }
+  },
+  {
+    "raw": "Groundnut___late leaf spot",
+    "name": "Groundnut - Late Leaf Spot",
+    "crop": "Groundnut",
+    "severity": "medium",
+    "details": {
+      "crop": "Groundnut",
+      "disease": "Groundnut - Late Leaf Spot",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of late leaf spot detected on Groundnut leaf surface.",
+        "Pattern is consistent with Groundnut - Late Leaf Spot."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Groundnut___nutrition deficiency",
+    "name": "Groundnut - Nutrition Deficiency",
+    "crop": "Groundnut",
+    "severity": "medium",
+    "details": {
+      "crop": "Groundnut",
+      "disease": "Groundnut - Nutrition Deficiency",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of nutrition deficiency detected on Groundnut leaf surface.",
+        "Pattern is consistent with Groundnut - Nutrition Deficiency."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Groundnut___rust",
+    "name": "Groundnut - Rust",
+    "crop": "Groundnut",
+    "severity": "critical",
+    "details": {
+      "crop": "Groundnut",
+      "disease": "Groundnut - Rust",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of rust detected on Groundnut leaf surface.",
+        "Pattern is consistent with Groundnut - Rust."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Maize___Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+    "name": "Maize - Cercospora Leaf Spot Gray Leaf Spot",
+    "crop": "Maize",
+    "severity": "medium",
+    "details": {
+      "crop": "Maize",
+      "disease": "Maize - Cercospora Leaf Spot Gray Leaf Spot",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of cercospora leaf spot gray leaf spot detected on Maize leaf surface.",
+        "Pattern is consistent with Maize - Cercospora Leaf Spot Gray Leaf Spot."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Maize___Corn_(maize)___Common_rust_",
+    "name": "Maize - Common Rust",
+    "crop": "Maize",
+    "severity": "critical",
+    "details": {
+      "crop": "Maize",
+      "disease": "Maize - Common Rust",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of common rust detected on Maize leaf surface.",
+        "Pattern is consistent with Maize - Common Rust."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Maize___Corn_(maize)___Northern_Leaf_Blight",
+    "name": "Maize - Northern Leaf Blight",
+    "crop": "Maize",
+    "severity": "critical",
+    "details": {
+      "crop": "Maize",
+      "disease": "Maize - Northern Leaf Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of northern leaf blight detected on Maize leaf surface.",
+        "Pattern is consistent with Maize - Northern Leaf Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Maize___Corn_(maize)___healthy",
+    "name": "Healthy Maize",
+    "crop": "Maize",
+    "severity": "low",
+    "details": {
+      "crop": "Maize",
+      "disease": "Healthy Maize",
+      "severity": "low",
+      "symptoms": [
+        "Maize foliage appears healthy with uniform green color and no visible lesions or discoloration."
+      ],
+      "recommendations": [
+        "Continue standard fertilization and irrigation schedule.",
+        "Perform routine monitoring for early pest/disease detection.",
+        "Maintain field hygiene and remove weeds regularly."
+      ],
+      "preventiveMeasures": [
+        "Weekly field scouting during active growth stages.",
+        "Maintain weed-free field perimeters.",
+        "Use balanced NPK fertilizers as per soil test recommendations."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Alternaria_D",
+    "name": "Onion - Alternaria D",
+    "crop": "Onion",
+    "severity": "medium",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Alternaria D",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of alternaria d detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Alternaria D."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Botrytis Leaf Blight",
+    "name": "Onion - Botrytis Leaf Blight",
+    "crop": "Onion",
+    "severity": "critical",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Botrytis Leaf Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of botrytis leaf blight detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Botrytis Leaf Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Bulb_blight-D",
+    "name": "Onion - Bulb Blight",
+    "crop": "Onion",
+    "severity": "critical",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Bulb Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of bulb blight detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Bulb Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Caterpillar-P",
+    "name": "Onion - Caterpillar",
+    "crop": "Onion",
+    "severity": "medium",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Caterpillar",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of caterpillar detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Caterpillar."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Downy mildew",
+    "name": "Onion - Downy Mildew",
+    "crop": "Onion",
+    "severity": "medium",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Downy Mildew",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of downy mildew detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Downy Mildew."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Fusarium-D",
+    "name": "Onion - Fusarium",
+    "crop": "Onion",
+    "severity": "critical",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Fusarium",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of fusarium detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Fusarium."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Healthy leaves",
+    "name": "Healthy Onion",
+    "crop": "Onion",
+    "severity": "low",
+    "details": {
+      "crop": "Onion",
+      "disease": "Healthy Onion",
+      "severity": "low",
+      "symptoms": [
+        "Onion foliage appears healthy with uniform green color and no visible lesions or discoloration."
+      ],
+      "recommendations": [
+        "Continue standard fertilization and irrigation schedule.",
+        "Perform routine monitoring for early pest/disease detection.",
+        "Maintain field hygiene and remove weeds regularly."
+      ],
+      "preventiveMeasures": [
+        "Weekly field scouting during active growth stages.",
+        "Maintain weed-free field perimeters.",
+        "Use balanced NPK fertilizers as per soil test recommendations."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Iris yellow virus_augment",
+    "name": "Onion - Iris Yellow Virus",
+    "crop": "Onion",
+    "severity": "critical",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Iris Yellow Virus",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of iris yellow virus detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Iris Yellow Virus."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Purple blotch",
+    "name": "Onion - Purple Blotch",
+    "crop": "Onion",
+    "severity": "medium",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Purple Blotch",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of purple blotch detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Purple Blotch."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Rust",
+    "name": "Onion - Rust",
+    "crop": "Onion",
+    "severity": "critical",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Rust",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of rust detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Rust."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Virosis-D",
+    "name": "Onion - Virosis",
+    "crop": "Onion",
+    "severity": "medium",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Virosis",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of virosis detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Virosis."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___Xanthomonas Leaf Blight",
+    "name": "Onion - Xanthomonas Leaf Blight",
+    "crop": "Onion",
+    "severity": "critical",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Xanthomonas Leaf Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of xanthomonas leaf blight detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Xanthomonas Leaf Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___onion1",
+    "name": "Onion - General Disease",
+    "crop": "Onion",
+    "severity": "medium",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - General Disease",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of general disease detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - General Disease."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Onion___stemphylium Leaf Blight",
+    "name": "Onion - Stemphylium Leaf Blight",
+    "crop": "Onion",
+    "severity": "critical",
+    "details": {
+      "crop": "Onion",
+      "disease": "Onion - Stemphylium Leaf Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of stemphylium leaf blight detected on Onion leaf surface.",
+        "Pattern is consistent with Onion - Stemphylium Leaf Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Potato___Potato___Early_blight",
+    "name": "Potato - Early Blight",
+    "crop": "Potato",
+    "severity": "critical",
+    "details": {
+      "crop": "Potato",
+      "disease": "Potato - Early Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of early blight detected on Potato leaf surface.",
+        "Pattern is consistent with Potato - Early Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Potato___Potato___Late_blight",
+    "name": "Potato - Late Blight",
+    "crop": "Potato",
+    "severity": "critical",
+    "details": {
+      "crop": "Potato",
+      "disease": "Potato - Late Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of late blight detected on Potato leaf surface.",
+        "Pattern is consistent with Potato - Late Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Potato___Potato___healthy",
+    "name": "Healthy Potato",
+    "crop": "Potato",
+    "severity": "low",
+    "details": {
+      "crop": "Potato",
+      "disease": "Healthy Potato",
+      "severity": "low",
+      "symptoms": [
+        "Potato foliage appears healthy with uniform green color and no visible lesions or discoloration."
+      ],
+      "recommendations": [
+        "Continue standard fertilization and irrigation schedule.",
+        "Perform routine monitoring for early pest/disease detection.",
+        "Maintain field hygiene and remove weeds regularly."
+      ],
+      "preventiveMeasures": [
+        "Weekly field scouting during active growth stages.",
+        "Maintain weed-free field perimeters.",
+        "Use balanced NPK fertilizers as per soil test recommendations."
+      ]
+    }
+  },
+  {
+    "raw": "Tomato___Tomato___Bacterial_spot",
+    "name": "Tomato - Bacterial Spot",
+    "crop": "Tomato",
+    "severity": "medium",
+    "details": {
+      "crop": "Tomato",
+      "disease": "Tomato - Bacterial Spot",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of bacterial spot detected on Tomato leaf surface.",
+        "Pattern is consistent with Tomato - Bacterial Spot."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Tomato___Tomato___Early_blight",
+    "name": "Tomato - Early Blight",
+    "crop": "Tomato",
+    "severity": "critical",
+    "details": {
+      "crop": "Tomato",
+      "disease": "Tomato - Early Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of early blight detected on Tomato leaf surface.",
+        "Pattern is consistent with Tomato - Early Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Tomato___Tomato___Late_blight",
+    "name": "Tomato - Late Blight",
+    "crop": "Tomato",
+    "severity": "critical",
+    "details": {
+      "crop": "Tomato",
+      "disease": "Tomato - Late Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of late blight detected on Tomato leaf surface.",
+        "Pattern is consistent with Tomato - Late Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Tomato___Tomato___Leaf_Mold",
+    "name": "Tomato - Leaf Mold",
+    "crop": "Tomato",
+    "severity": "medium",
+    "details": {
+      "crop": "Tomato",
+      "disease": "Tomato - Leaf Mold",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of leaf mold detected on Tomato leaf surface.",
+        "Pattern is consistent with Tomato - Leaf Mold."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Tomato___Tomato___Septoria_leaf_spot",
+    "name": "Tomato - Septoria Leaf Spot",
+    "crop": "Tomato",
+    "severity": "medium",
+    "details": {
+      "crop": "Tomato",
+      "disease": "Tomato - Septoria Leaf Spot",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of septoria leaf spot detected on Tomato leaf surface.",
+        "Pattern is consistent with Tomato - Septoria Leaf Spot."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Tomato___Tomato___Spider_mites Two-spotted_spider_mite",
+    "name": "Tomato - Spider Mites",
+    "crop": "Tomato",
+    "severity": "medium",
+    "details": {
+      "crop": "Tomato",
+      "disease": "Tomato - Spider Mites",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of spider mites detected on Tomato leaf surface.",
+        "Pattern is consistent with Tomato - Spider Mites."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Tomato___Tomato___Target_Spot",
+    "name": "Tomato - Target Spot",
+    "crop": "Tomato",
+    "severity": "medium",
+    "details": {
+      "crop": "Tomato",
+      "disease": "Tomato - Target Spot",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of target spot detected on Tomato leaf surface.",
+        "Pattern is consistent with Tomato - Target Spot."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Tomato___Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+    "name": "Tomato - Yellow Leaf Curl Virus",
+    "crop": "Tomato",
+    "severity": "critical",
+    "details": {
+      "crop": "Tomato",
+      "disease": "Tomato - Yellow Leaf Curl Virus",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of yellow leaf curl virus detected on Tomato leaf surface.",
+        "Pattern is consistent with Tomato - Yellow Leaf Curl Virus."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Tomato___Tomato___Tomato_mosaic_virus",
+    "name": "Tomato - Mosaic Virus",
+    "crop": "Tomato",
+    "severity": "critical",
+    "details": {
+      "crop": "Tomato",
+      "disease": "Tomato - Mosaic Virus",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of mosaic virus detected on Tomato leaf surface.",
+        "Pattern is consistent with Tomato - Mosaic Virus."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Tomato___Tomato___healthy",
+    "name": "Healthy Tomato",
+    "crop": "Tomato",
+    "severity": "low",
+    "details": {
+      "crop": "Tomato",
+      "disease": "Healthy Tomato",
+      "severity": "low",
+      "symptoms": [
+        "Tomato foliage appears healthy with uniform green color and no visible lesions or discoloration."
+      ],
+      "recommendations": [
+        "Continue standard fertilization and irrigation schedule.",
+        "Perform routine monitoring for early pest/disease detection.",
+        "Maintain field hygiene and remove weeds regularly."
+      ],
+      "preventiveMeasures": [
+        "Weekly field scouting during active growth stages.",
+        "Maintain weed-free field perimeters.",
+        "Use balanced NPK fertilizers as per soil test recommendations."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Aphid",
+    "name": "Wheat - Aphid",
+    "crop": "Wheat",
+    "severity": "medium",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Aphid",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of aphid detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Aphid."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Black Rust",
+    "name": "Wheat - Black Rust",
+    "crop": "Wheat",
+    "severity": "critical",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Black Rust",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of black rust detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Black Rust."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Blast",
+    "name": "Wheat - Blast",
+    "crop": "Wheat",
+    "severity": "critical",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Blast",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of blast detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Blast."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Brown Rust",
+    "name": "Wheat - Brown Rust",
+    "crop": "Wheat",
+    "severity": "critical",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Brown Rust",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of brown rust detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Brown Rust."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Common Root Rot",
+    "name": "Wheat - Common Root Rot",
+    "crop": "Wheat",
+    "severity": "critical",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Common Root Rot",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of common root rot detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Common Root Rot."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Fusarium Head Blight",
+    "name": "Wheat - Fusarium Head Blight",
+    "crop": "Wheat",
+    "severity": "critical",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Fusarium Head Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of fusarium head blight detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Fusarium Head Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Healthy",
+    "name": "Healthy Wheat",
+    "crop": "Wheat",
+    "severity": "low",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Healthy Wheat",
+      "severity": "low",
+      "symptoms": [
+        "Wheat foliage appears healthy with uniform green color and no visible lesions or discoloration."
+      ],
+      "recommendations": [
+        "Continue standard fertilization and irrigation schedule.",
+        "Perform routine monitoring for early pest/disease detection.",
+        "Maintain field hygiene and remove weeds regularly."
+      ],
+      "preventiveMeasures": [
+        "Weekly field scouting during active growth stages.",
+        "Maintain weed-free field perimeters.",
+        "Use balanced NPK fertilizers as per soil test recommendations."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Leaf Blight",
+    "name": "Wheat - Leaf Blight",
+    "crop": "Wheat",
+    "severity": "critical",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Leaf Blight",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of leaf blight detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Leaf Blight."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Mildew",
+    "name": "Wheat - Mildew",
+    "crop": "Wheat",
+    "severity": "medium",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Mildew",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of mildew detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Mildew."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Mite",
+    "name": "Wheat - Mite",
+    "crop": "Wheat",
+    "severity": "medium",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Mite",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of mite detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Mite."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Smut",
+    "name": "Wheat - Smut",
+    "crop": "Wheat",
+    "severity": "critical",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Smut",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of smut detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Smut."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Stem fly",
+    "name": "Wheat - Stem Fly",
+    "crop": "Wheat",
+    "severity": "medium",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Stem Fly",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of stem fly detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Stem Fly."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Tan spot",
+    "name": "Wheat - Tan Spot",
+    "crop": "Wheat",
+    "severity": "medium",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Tan Spot",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of tan spot detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Tan Spot."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___Yellow Rust",
+    "name": "Wheat - Yellow Rust",
+    "crop": "Wheat",
+    "severity": "critical",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Yellow Rust",
+      "severity": "critical",
+      "symptoms": [
+        "Visible signs of yellow rust detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Yellow Rust."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  },
+  {
+    "raw": "Wheat___septoria",
+    "name": "Wheat - Septoria",
+    "crop": "Wheat",
+    "severity": "medium",
+    "details": {
+      "crop": "Wheat",
+      "disease": "Wheat - Septoria",
+      "severity": "medium",
+      "symptoms": [
+        "Visible signs of septoria detected on Wheat leaf surface.",
+        "Pattern is consistent with Wheat - Septoria."
+      ],
+      "recommendations": [
+        "Consult your local Krishi Vigyan Kendra (KVK) for region-specific treatment.",
+        "Apply recommended fungicide/pesticide per agricultural extension guidelines.",
+        "Remove and safely dispose of severely infected plant material.",
+        "Avoid overhead irrigation to reduce moisture on foliage."
+      ],
+      "preventiveMeasures": [
+        "Use certified disease-resistant seed varieties for next planting.",
+        "Practice crop rotation with non-host species.",
+        "Ensure proper field drainage and air circulation.",
+        "Monitor weather forecasts for conditions favorable to disease spread."
+      ]
+    }
+  }
+]
