@@ -31,14 +31,10 @@ class Settings(BaseSettings):
     MODEL_PATH: str = _resolve_model_path("CropX_MobileNetV3_Final.keras")
     MODEL_PATH_2: str = _resolve_model_path("CropX_MobileNetV3_Final1.keras")
 
-    class Config:
-        env_file = ".env"
-        extra = "ignore"
-        # Prevent .env from overriding computed model paths
-        fields = {
-            "MODEL_PATH": {"exclude": True},
-            "MODEL_PATH_2": {"exclude": True},
-        }
+    model_config = {
+        "env_file": ".env",
+        "extra": "ignore",
+    }
 
 settings = Settings()
 

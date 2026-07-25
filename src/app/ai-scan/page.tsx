@@ -23,7 +23,7 @@ export default function AIScanPage() {
   const { user } = useAuth();
   const { addScan } = useScans();
 
-  const [selectedCrop, setSelectedCrop] = useState<string>('Tomato');
+  const [selectedCrop, setSelectedCrop] = useState<string>('auto');
   const [customCrop, setCustomCrop] = useState<string>('');
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -62,7 +62,7 @@ export default function AIScanPage() {
       return;
     }
 
-    const cropName = selectedCrop === 'other' ? customCrop || 'Other Crop' : selectedCrop;
+    const cropName = selectedCrop === 'auto' ? '' : selectedCrop === 'other' ? customCrop || '' : selectedCrop;
 
     setAnalyzing(true);
     setResult(null);
@@ -72,7 +72,9 @@ export default function AIScanPage() {
       if (imageFile) {
         formData.append('image', imageFile);
       }
-      formData.append('crop', cropName);
+      if (cropName) {
+        formData.append('crop', cropName);
+      }
       formData.append('season', season);
       formData.append('state', user?.state || 'Gujarat');
       formData.append('district', user?.district || 'Anand');
@@ -130,7 +132,12 @@ export default function AIScanPage() {
           {/* Left Controls: Upload & Crop selection */}
           <div className="lg:col-span-6 space-y-5">
             <div className="card-base">
-              <h2 className="text-base font-bold text-foreground mb-4">1. Select Target Crop</h2>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-base font-bold text-foreground">1. Select Target Crop</h2>
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-semibold">
+                  Optional / Auto-Detect
+                </span>
+              </div>
 
               <div className="space-y-3">
                 <div>
@@ -142,6 +149,7 @@ export default function AIScanPage() {
                     onChange={(e) => setSelectedCrop(e.target.value)}
                     className="input-field cursor-pointer"
                   >
+                    <option value="auto">✨ Auto-Detect Crop (Recommended - AI Model)</option>
                     {INDIAN_CROPS.map((crop) => (
                       <option key={`crop-opt-${crop.id}`} value={crop.name.split(' (')[0]}>
                         {crop.name}

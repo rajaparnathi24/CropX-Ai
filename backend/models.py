@@ -1,11 +1,14 @@
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from sqlalchemy import Column, String, Float, DateTime, ForeignKey, Text
 from sqlalchemy.orm import relationship
 from database import Base
 
 def generate_uuid():
     return str(uuid.uuid4())
+
+def get_utc_now():
+    return datetime.now(timezone.utc)
 
 class User(Base):
     __tablename__ = "users"
@@ -17,7 +20,7 @@ class User(Base):
     state = Column(String, nullable=False, default="Gujarat")
     district = Column(String, nullable=False, default="Anand")
     primary_crop = Column(String, nullable=True, default="Rice")
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=get_utc_now)
 
     scans = relationship("Scan", back_populates="owner", cascade="all, delete-orphan")
 
@@ -38,7 +41,7 @@ class Scan(Base):
     season = Column(String, nullable=False) # Kharif, Rabi, Zaid
     state = Column(String, nullable=False)
     district = Column(String, nullable=False)
-    date = Column(DateTime, default=datetime.utcnow, index=True)
+    date = Column(DateTime, default=get_utc_now, index=True)
 
     owner = relationship("User", back_populates="scans")
 
@@ -54,7 +57,7 @@ class CommunityPost(Base):
     content = Column(Text, nullable=False)
     image_url = Column(String, nullable=True)
     likes = Column(Float, default=0)
-    created_at = Column(DateTime, default=datetime.utcnow, index=True)
+    created_at = Column(DateTime, default=get_utc_now, index=True)
 
     comments = relationship("CommunityComment", back_populates="post", cascade="all, delete-orphan")
 
@@ -67,7 +70,7 @@ class CommunityComment(Base):
     author_name = Column(String, nullable=False)
     author_location = Column(String, nullable=False)
     content = Column(Text, nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=get_utc_now)
 
     post = relationship("CommunityPost", back_populates="comments")
 

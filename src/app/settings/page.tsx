@@ -10,12 +10,26 @@ export default function SettingsPage() {
   const [darkMode, setDarkMode] = useState(false);
   const [notifications, setNotifications] = useState(true);
   const [apiUrl, setApiUrl] = useState(
-    process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1'
+    process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
   );
 
+  React.useEffect(() => {
+    const isDark =
+      document.documentElement.classList.contains('dark') ||
+      localStorage.getItem('cropx_theme') === 'dark';
+    setDarkMode(isDark);
+  }, []);
+
   const toggleDark = () => {
-    setDarkMode(!darkMode);
-    document.documentElement?.classList?.toggle('dark');
+    const nextMode = !darkMode;
+    setDarkMode(nextMode);
+    if (nextMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('cropx_theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('cropx_theme', 'light');
+    }
   };
 
   const handleSave = (e: React.FormEvent) => {

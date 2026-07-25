@@ -1,6 +1,5 @@
 # Node modules
 node_modules/
-package-lock.json
 
 # Next.js build output
 .next/
@@ -8,6 +7,19 @@ out/
 
 # Production build
 build/
+
+# Python & Environment
+__pycache__/
+*.pyc
+venv/
+.env
+.env.local
+
+# Databases & Uploads
+*.db
+uploads/
+backend/uploads/
+backend/cropx.db
 
 # Logs
 npm-debug.log*
@@ -22,16 +34,11 @@ Thumbs.db
 # Vercel deployment
 .vercel/
 
-# Optional: if using TypeScript
+# TypeScript & Testing
 *.tsbuildinfo
-
-# Optional: if using testing tools
 coverage/
 jest-test-results.json
 
-# Optional: if using IDEs
+# IDEs
 .vscode/
-.idea/
-
-# Optional: if using TurboRepo or monorepo
-turbo/
+.idea/

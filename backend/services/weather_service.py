@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 def get_indian_season(date_obj: datetime.datetime = None) -> str:
     """Determine Indian Agricultural Season based on date."""
     if date_obj is None:
-        date_obj = datetime.datetime.utcnow()
+        date_obj = datetime.datetime.now(datetime.timezone.utc)
 
     month = date_obj.month  # 1 to 12
 
