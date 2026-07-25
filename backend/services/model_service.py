@@ -4,6 +4,7 @@ import numpy as np
 from fastapi import HTTPException, status
 from config import settings
 from class_names import PLANT_57_CLASSES, get_disease_details
+from typing import Optional
 from preprocess import preprocess_image
 
 logger = logging.getLogger(__name__)
@@ -68,7 +69,7 @@ class ModelService:
 
         logger.info("=" * 60)
 
-    def predict(self, file_bytes: bytes, target_crop: str = "Tomato") -> dict:
+    def predict(self, file_bytes: bytes, target_crop: Optional[str] = None) -> dict:
         """
         Run ensemble inference on a crop leaf image.
 
@@ -121,7 +122,7 @@ class ModelService:
             ensemble_preds = all_predictions[0]
             logger.info(f"  Single model prediction (no ensemble averaging)")
 
-        # Step 4: Extract top prediction
+        # Step 4: Extract prediction (top prediction from ensemble)
         top_idx = int(np.argmax(ensemble_preds))
         confidence = float(ensemble_preds[top_idx]) * 100
 
@@ -129,7 +130,11 @@ class ModelService:
             raw_class_name = PLANT_57_CLASSES[top_idx]
         else:
             raw_class_name = f"Class_{top_idx}"
-            logger.warning(f"Predicted index {top_idx} exceeds class list length {len(PLANT_57_CLASSES)}")
+
+        logger.info(
+            f"Prediction: class index {top_idx} ({raw_class_name}) "
+            f"with {confidence:.1f}% confidence"
+        )
 
         # Log top-3 for debugging
         top3_indices = np.argsort(ensemble_preds)[-3:][::-1]
@@ -144,7 +149,7 @@ class ModelService:
         meta = get_disease_details(raw_class_name)
 
         return {
-            "crop": target_crop if target_crop and target_crop.lower() != "other" else meta["crop"],
+            "crop": meta["crop"],
             "disease": meta["disease"],
             "confidence": round(confidence, 1),
             "severity": meta["severity"],

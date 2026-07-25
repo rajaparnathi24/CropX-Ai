@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { ScanRecord, DiseaseReport } from '@/types';
 import { useAuth } from './AuthContext';
+import { apiService } from '@/services/api';
 
 interface ScanContextType {
   scans: ScanRecord[];
@@ -25,22 +26,43 @@ export function ScanProvider({ children }: { children: React.ReactNode }) {
     return user ? `cropx_scans_${user.id}` : 'cropx_scans_guest';
   }, [user]);
 
-  // Load scans from localStorage for current active user
+  // Load scans from backend API first, falling back to localStorage
   useEffect(() => {
-    setIsLoading(true);
-    try {
-      const key = getStorageKey();
-      const stored = localStorage.getItem(key);
-      if (stored) {
-        setScans(JSON.parse(stored));
-      } else {
-        setScans([]);
+    let isMounted = true;
+    const fetchScans = async () => {
+      setIsLoading(true);
+      try {
+        const backendScans = await apiService.scan.getHistory();
+        if (isMounted && backendScans && backendScans.length > 0) {
+          setScans(backendScans);
+          const key = getStorageKey();
+          localStorage.setItem(key, JSON.stringify(backendScans));
+          setIsLoading(false);
+          return;
+        }
+      } catch {
+        // Backend unavailable or empty
       }
-    } catch {
-      setScans([]);
-    } finally {
-      setIsLoading(false);
-    }
+
+      try {
+        const key = getStorageKey();
+        const stored = localStorage.getItem(key);
+        if (isMounted && stored) {
+          setScans(JSON.parse(stored));
+        } else if (isMounted) {
+          setScans([]);
+        }
+      } catch {
+        if (isMounted) setScans([]);
+      } finally {
+        if (isMounted) setIsLoading(false);
+      }
+    };
+
+    fetchScans();
+    return () => {
+      isMounted = false;
+    };
   }, [getStorageKey]);
 
   // Recalculate disease reports derived dynamically from actual scans
@@ -107,16 +129,19 @@ export function ScanProvider({ children }: { children: React.ReactNode }) {
     try {
       const key = getStorageKey();
       localStorage.setItem(key, JSON.stringify(updatedScans));
+      apiService.scan.deleteScan(scanId).catch(() => {});
     } catch {
       console.error('Failed to update scans storage');
     }
   };
 
   const clearHistory = () => {
+    const oldScans = [...scans];
     setScans([]);
     try {
       const key = getStorageKey();
       localStorage.removeItem(key);
+      oldScans.forEach((s) => apiService.scan.deleteScan(s.id).catch(() => {}));
     } catch {
       console.error('Failed to clear scan history');
     }

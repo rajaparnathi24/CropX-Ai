@@ -12,6 +12,7 @@ from services.model_service import model_service
 from services.weather_service import get_indian_season
 from preprocess import validate_image_file, MAX_FILE_SIZE
 from config import settings
+from typing import Optional
 
 router = APIRouter(tags=["AI Prediction"])
 
@@ -19,7 +20,7 @@ router = APIRouter(tags=["AI Prediction"])
 @router.post("/api/v1/predict", response_model=schemas.PredictResponse)
 async def predict(
     image: UploadFile = File(...),
-    crop: str = Form("Tomato"),
+    crop: Optional[str] = Form(None),
     season: str = Form(None),
     state: str = Form(None),
     district: str = Form(None),
@@ -34,7 +35,7 @@ async def predict(
     validate_image_file(file_bytes, image.filename)
 
     # Calculate Indian season if not provided
-    now = datetime.datetime.utcnow()
+    now = datetime.datetime.now(datetime.timezone.utc)
     calculated_season = season or get_indian_season(now)
 
     # Predict disease
