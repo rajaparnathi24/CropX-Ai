@@ -21,7 +21,7 @@ def get_current_user(
                 email="farmer@cropx.farm",
                 hashed_password=security.hash_password("CropX@2026"),
                 state="Gujarat",
-                district="Ahmedabad",
+                district="Junagadh",
                 primary_crop="Groundnut"
             )
             db.add(user)
