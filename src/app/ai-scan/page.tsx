@@ -77,7 +77,7 @@ export default function AIScanPage() {
       }
       formData.append('season', season);
       formData.append('state', user?.state || 'Gujarat');
-      formData.append('district', user?.district || 'Anand');
+      formData.append('district', user?.district || 'Junagadh');
 
       // Call API Service layer
       const response = await apiService.scan.predict(formData);
@@ -95,7 +95,7 @@ export default function AIScanPage() {
         preventiveMeasures: response.preventiveMeasures,
         season,
         state: user?.state || 'Gujarat',
-        district: user?.district || 'Anand',
+        district: user?.district || 'Junagadh',
       });
 
       toast.success(`Diagnosis complete: ${response.disease}`);

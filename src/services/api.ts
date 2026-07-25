@@ -176,7 +176,7 @@ export const apiService = {
         icon: 'partly-cloudy',
         rainfall: 0,
         windSpeed: 12,
-        district: district || 'Anand',
+        district: district || 'Junagadh',
         state: state || 'Gujarat',
         updatedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         forecast: [
@@ -220,7 +220,7 @@ export const apiService = {
       }
 
       const stored =
-        typeof window !== 'undefined' ? localStorage.getItem('cropx_community_posts_v1') : null;
+        typeof window !== 'undefined' ? localStorage.getItem('cropx_community_posts_v3') : null;
       if (stored) {
         try {
           return JSON.parse(stored);
@@ -232,12 +232,12 @@ export const apiService = {
       const defaultPosts: CommunityPost[] = [
         {
           id: 'post-1',
-          authorName: 'Ramesh Patel',
-          authorLocation: 'Anand, Gujarat',
-          cropCategory: 'Tomato',
+          authorName: 'Raj Aparnathi',
+          authorLocation: 'Junagadh, Gujarat',
+          cropCategory: 'Groundnut',
           title: 'Effective organic treatment for Early Blight on Tomato leaves?',
           content:
-            'My tomato crop has started displaying concentric dark rings with yellow halos on lower leaves during the Kharif monsoon. Has anyone successfully controlled this using Neem oil spray or Copper fungicides?',
+            'My Groundnut crop has started displaying concentric dark rings with yellow halos on lower leaves during the Kharif monsoon. Has anyone successfully controlled this using Neem oil spray or Copper fungicides?',
           likes: 14,
           commentsCount: 3,
           comments: [
@@ -245,7 +245,7 @@ export const apiService = {
               id: 'c-1',
               postId: 'post-1',
               authorName: 'Dr. Anita Sharma',
-              authorLocation: 'ICAR Anand',
+              authorLocation: 'Ahmedabad, Gujarat',
               content:
                 'Apply Copper Oxychloride (3g/liter water) every 7-10 days. Ensure crop spacing for air circulation.',
               createdAt: new Date(Date.now() - 3600000 * 5).toISOString(),
@@ -253,8 +253,8 @@ export const apiService = {
             {
               id: 'c-2',
               postId: 'post-1',
-              authorName: 'Vikram Singh',
-              authorLocation: 'Vadodara, Gujarat',
+              authorName: 'Harpreet Singh',
+              authorLocation: 'Ahmedabad, Gujarat',
               content:
                 'Neem oil emulsion (5ml/L with mild detergent) worked well in early stages for my patch.',
               createdAt: new Date(Date.now() - 3600000 * 2).toISOString(),
@@ -264,7 +264,7 @@ export const apiService = {
         },
         {
           id: 'post-2',
-          authorName: 'Suresh Kumar',
+          authorName: 'Yagnik Chauhan',
           authorLocation: 'Ludhiana, Punjab',
           cropCategory: 'Wheat',
           title: 'Yellow Rust prevention advice for Rabi wheat planting',
@@ -276,8 +276,8 @@ export const apiService = {
             {
               id: 'c-3',
               postId: 'post-2',
-              authorName: 'Harpreet Singh',
-              authorLocation: 'Amritsar, Punjab',
+              authorName: 'Dixit Prajapati',
+              authorLocation: 'Junagadh, Gujarat',
               content:
                 'HD-2967 and DBW-187 have shown high resistance against Yellow Rust strains in Punjab.',
               createdAt: new Date(Date.now() - 3600000 * 12).toISOString(),
@@ -288,7 +288,7 @@ export const apiService = {
       ];
 
       if (typeof window !== 'undefined') {
-        localStorage.setItem('cropx_community_posts_v1', JSON.stringify(defaultPosts));
+        localStorage.setItem('cropx_community_posts_v3', JSON.stringify(defaultPosts));
       }
       return defaultPosts;
     },
@@ -321,7 +321,7 @@ export const apiService = {
       const existing = await apiService.community.getPosts();
       const updated = [newPost, ...existing];
       if (typeof window !== 'undefined') {
-        localStorage.setItem('cropx_community_posts_v1', JSON.stringify(updated));
+        localStorage.setItem('cropx_community_posts_v3', JSON.stringify(updated));
       }
       return newPost;
     },
@@ -357,7 +357,7 @@ export const apiService = {
         target.comments.push(newComment);
         target.commentsCount = target.comments.length;
         if (typeof window !== 'undefined') {
-          localStorage.setItem('cropx_community_posts_v1', JSON.stringify(posts));
+          localStorage.setItem('cropx_community_posts_v3', JSON.stringify(posts));
         }
       }
       return newComment;
@@ -382,7 +382,7 @@ export const apiService = {
       if (target) {
         target.likes += 1;
         if (typeof window !== 'undefined') {
-          localStorage.setItem('cropx_community_posts_v1', JSON.stringify(posts));
+          localStorage.setItem('cropx_community_posts_v3', JSON.stringify(posts));
         }
         return target.likes;
       }

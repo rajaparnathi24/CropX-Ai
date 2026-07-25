@@ -16,8 +16,8 @@ export default function ProfilePage() {
   const [fullName, setFullName] = useState(user?.fullName || '');
   const [email, setEmail] = useState(user?.email || '');
   const [state, setState] = useState(user?.state || 'Gujarat');
-  const [district, setDistrict] = useState(user?.district || 'Anand');
-  const [primaryCrop, setPrimaryCrop] = useState(user?.primaryCrop || 'Rice');
+  const [district, setDistrict] = useState(user?.district || 'Junagadh');
+  const [primaryCrop, setPrimaryCrop] = useState(user?.primaryCrop || 'Groundnut');
 
   const currentDistricts = INDIAN_STATES_DISTRICTS.find((s) => s.state === state)?.districts || [];
 

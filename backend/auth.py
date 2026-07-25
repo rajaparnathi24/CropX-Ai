@@ -17,12 +17,12 @@ def get_current_user(
         user = db.query(models.User).filter(models.User.email == "demo@cropx.farm").first()
         if not user:
             user = models.User(
-                full_name="Rajesh Patel",
-                email="demo@cropx.farm",
+                full_name="Raj Aparnathi",
+                email="farmer@cropx.farm",
                 hashed_password=security.hash_password("CropX@2026"),
                 state="Gujarat",
-                district="Anand",
-                primary_crop="Tomato"
+                district="Ahmedabad",
+                primary_crop="Groundnut"
             )
             db.add(user)
             db.commit()
