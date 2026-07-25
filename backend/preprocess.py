@@ -42,11 +42,10 @@ def preprocess_image(file_bytes: bytes, target_size=(224, 224)) -> np.ndarray:
 
         img_array = np.array(image, dtype=np.float32)
 
-        # MobileNetV3 normalization: [0, 255] → [-1, 1]
-        # This matches tf.keras.applications.mobilenet_v3.preprocess_input()
-        # Formula: (pixel / 127.5) - 1.0
-        img_array = (img_array / 127.5) - 1.0
-
+        # Do NOT manually apply (img_array / 127.5) - 1.0 here.
+        # The MobileNetV3 model graph expects raw float32 pixel values in range [0, 255].
+        # Manual [-1, 1] normalization causes double normalization in MobileNetV3,
+        # forcing wrong predictions.
         img_array = np.expand_dims(img_array, axis=0)
 
         logger.info(
