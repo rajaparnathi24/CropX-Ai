@@ -334,19 +334,19 @@ export default function AIScanPage() {
                     </div>
 
                     {/* Recommended Treatment */}
-                    <div className="rounded-xl bg-severity-medium-bg border border-severity-medium/30 p-4">
-                      <h4 className="text-xs font-bold text-severity-medium uppercase tracking-wider mb-2 flex items-center gap-1">
-                        <AlertCircle size={14} /> Recommended Treatment Plan
+                    <div className="rounded-xl bg-severity-medium-bg dark:bg-amber-950/40 border border-severity-medium/30 dark:border-amber-700/40 p-4.5 sm:p-5">
+                      <h4 className="text-sm font-bold text-severity-medium dark:text-amber-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                        <AlertCircle size={18} /> Recommended Treatment Plan
                       </h4>
-                      <ul className="space-y-1.5">
+                      <ul className="space-y-2.5">
                         {result.recommendations.map((rec, idx) => (
                           <li
                             key={`rec-${idx}`}
-                            className="text-xs text-foreground font-medium flex items-start gap-2"
+                            className="text-sm sm:text-base text-foreground dark:text-amber-100 font-medium flex items-start gap-2.5 leading-relaxed"
                           >
                             <ChevronRight
-                              size={14}
-                              className="text-severity-medium flex-shrink-0 mt-0.5"
+                              size={18}
+                              className="text-severity-medium dark:text-amber-400 flex-shrink-0 mt-0.5"
                             />
                             <span>{rec}</span>
                           </li>
