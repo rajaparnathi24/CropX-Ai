@@ -77,17 +77,17 @@ class DashboardStats(BaseModel):
 # Weather Schemas
 class WeatherForecastItem(BaseModel):
     day: str
-    tempHigh: float
-    tempLow: float
+    tempHigh: int
+    tempLow: int
     condition: str
 
 class WeatherResponse(BaseModel):
-    temperature: float
-    humidity: float
+    temperature: int
+    humidity: int
     condition: str
     icon: str = "partly-cloudy"
-    rainfall: float
-    windSpeed: float
+    rainfall: int
+    windSpeed: int
     district: str
     state: str
     updatedAt: str

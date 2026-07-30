@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import AppLayout from '@/components/AppLayout';
+import CameraCapture from '@/components/CameraCapture';
 import {
   Upload,
   ScanLine,
@@ -10,6 +11,7 @@ import {
   ChevronRight,
   RefreshCw,
   Sprout,
+  Camera,
 } from 'lucide-react';
 import { INDIAN_CROPS } from '@/constants/crops';
 import { getIndianSeason, SEASONS_INFO } from '@/constants/seasons';
@@ -29,6 +31,7 @@ export default function AIScanPage() {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [analyzing, setAnalyzing] = useState<boolean>(false);
   const [result, setResult] = useState<PredictResponse | null>(null);
+  const [showCamera, setShowCamera] = useState<boolean>(false);
 
   const season = getIndianSeason(new Date());
   const seasonMeta = SEASONS_INFO[season];
@@ -54,6 +57,16 @@ export default function AIScanPage() {
       setImagePreview(URL.createObjectURL(file));
       setResult(null);
     }
+  };
+
+  // Called by CameraCapture once the user taps "Use This Photo".
+  // Feeds the captured frame into the exact same state used by
+  // file upload / drag-drop, so handleRunScan needs no changes.
+  const handleCameraCapture = (file: File) => {
+    setImageFile(file);
+    setImagePreview(URL.createObjectURL(file));
+    setResult(null);
+    toast.success('Photo captured. Ready to scan.');
   };
 
   const handleRunScan = async () => {
@@ -192,7 +205,7 @@ export default function AIScanPage() {
                       alt="Crop leaf sample"
                       className="w-full h-56 object-cover rounded-xl border border-border"
                     />
-                    <div className="flex items-center justify-center gap-3">
+                    <div className="flex items-center justify-center gap-3 flex-wrap">
                       <label className="btn-secondary text-xs px-3.5 py-2 cursor-pointer">
                         Change Image
                         <input
@@ -202,6 +215,12 @@ export default function AIScanPage() {
                           className="hidden"
                         />
                       </label>
+                      <button
+                        onClick={() => setShowCamera(true)}
+                        className="btn-secondary text-xs px-3.5 py-2 gap-1.5"
+                      >
+                        <Camera size={14} /> Open Camera
+                      </button>
                       <button
                         onClick={() => {
                           setImageFile(null);
@@ -215,7 +234,7 @@ export default function AIScanPage() {
                     </div>
                   </div>
                 ) : (
-                  <label className="cursor-pointer block py-8 space-y-3">
+                  <div className="py-8 space-y-3">
                     <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center mx-auto text-primary">
                       <Upload size={28} />
                     </div>
@@ -227,16 +246,24 @@ export default function AIScanPage() {
                         Supports JPG, PNG, WEBP (Max 10MB)
                       </p>
                     </div>
-                    <span className="inline-block btn-secondary text-xs px-4 py-2 mt-2">
-                      Browse Files
-                    </span>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleImageChange}
-                      className="hidden"
-                    />
-                  </label>
+                    <div className="flex items-center justify-center gap-3 flex-wrap mt-2">
+                      <label className="btn-secondary text-xs px-4 py-2 cursor-pointer">
+                        Browse Files
+                        <input
+                          type="file"
+                          accept="image/*"
+                          onChange={handleImageChange}
+                          className="hidden"
+                        />
+                      </label>
+                      <button
+                        onClick={() => setShowCamera(true)}
+                        className="btn-secondary text-xs px-4 py-2 gap-1.5"
+                      >
+                        <Camera size={14} /> Open Camera
+                      </button>
+                    </div>
+                  </div>
                 )}
               </div>
 
@@ -378,6 +405,12 @@ export default function AIScanPage() {
           </div>
         </div>
       </div>
+
+      <CameraCapture
+        isOpen={showCamera}
+        onClose={() => setShowCamera(false)}
+        onCapture={handleCameraCapture}
+      />
     </AppLayout>
   );
 }

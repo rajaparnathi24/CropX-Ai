@@ -1,8 +1,6 @@
 import os
-os.environ['KERAS_BACKEND'] = 'torch'
 import logging
 import numpy as np
-import keras
 from fastapi import HTTPException, status
 from config import settings
 from class_names import PLANT_57_CLASSES, get_disease_details, get_crop_name
@@ -32,10 +30,11 @@ class ModelService:
 
     def _load_single_model(self, model_path: str, model_name: str):
         """Load a single Keras model file and return it, or None on failure."""
+        import tensorflow as tf
         try:
             if os.path.exists(model_path):
                 logger.info(f"Loading {model_name} from: {model_path}")
-                model = keras.models.load_model(model_path)
+                model = tf.keras.models.load_model(model_path)
                 logger.info(
                     f"  ✓ {model_name} loaded successfully | "
                     f"Input: {model.input_shape} | "
@@ -46,7 +45,7 @@ class ModelService:
                 logger.error(f"  ✗ {model_name} file NOT FOUND at: {model_path}")
                 return None
         except Exception as e:
-            logger.warning(f"  ⚠ Could not load {model_name}: {str(e)}")
+            logger.error(f"  ✗ Failed to load {model_name}: {str(e)}")
             return None
 
     def _init_models(self):
@@ -66,108 +65,27 @@ class ModelService:
         elif loaded_count == 1:
             logger.warning(f"⚠ Single model mode — Only 1 of 2 models loaded")
         else:
-            logger.warning("⚠ Fallback mode ACTIVE — TensorFlow model loading skipped; using heuristic inference fallback.")
+            logger.error("✗ CRITICAL: No models loaded! Predictions will fail.")
 
         logger.info("=" * 60)
 
     def predict(self, file_bytes: bytes, target_crop: Optional[str] = None) -> dict:
         """
         Run ensemble inference on a crop leaf image.
+
+        Pipeline:
+          1. Preprocess image → (1, 224, 224, 3) normalized [-1, 1]
+          2. Run inference on all loaded models
+          3. Average softmax outputs (ensemble)
+          4. Extract top prediction with confidence
+          5. Return structured disease details
         """
         if not self._models_loaded:
-            # High-accuracy leaf visual feature analyzer when TensorFlow is absent in Python 3.14
-            import io
-            from PIL import Image
-            
-            try:
-                img = Image.open(io.BytesIO(file_bytes)).convert("RGB").resize((224, 224))
-                arr = np.array(img, dtype=np.float32)
-                r, g, b = arr[:,:,0], arr[:,:,1], arr[:,:,2]
-                total_px = 224 * 224
-                
-                green_mask = (g > r) & (g > b) & (g > 35)
-                green_ratio = np.sum(green_mask) / total_px
-                
-                spot_mask = (r < 95) & (g < 95) & (b < 95) & (~green_mask)
-                spot_ratio = np.sum(spot_mask) / total_px
-                
-                yellow_mask = (r > 115) & (g > 115) & (b < 100)
-                yellow_ratio = np.sum(yellow_mask) / total_px
-                
-                rust_mask = (r > g + 20) & (r > b + 20) & (r > 65)
-                rust_ratio = np.sum(rust_mask) / total_px
-                
-                powdery_mask = (r > 175) & (g > 175) & (b > 175)
-                powdery_ratio = np.sum(powdery_mask) / total_px
-
-                if target_crop and target_crop.strip().lower() not in ["", "all", "select crop", "none"]:
-                    t_crop = target_crop.strip().lower()
-                    candidates = [
-                        (i, c) for i, c in enumerate(PLANT_57_CLASSES)
-                        if get_crop_name(c).lower() == t_crop or t_crop in get_crop_name(c).lower()
-                    ]
-                else:
-                    candidates = list(enumerate(PLANT_57_CLASSES))
-
-                if not candidates:
-                    candidates = list(enumerate(PLANT_57_CLASSES))
-
-                scores = []
-                for idx, c in candidates:
-                    c_lower = c.lower()
-                    score = 0.5
-                    is_h = "healthy" in c_lower
-                    is_spot = any(kw in c_lower for kw in ["spot", "blight", "bacterial", "septoria", "alternaria", "rot"])
-                    is_rust = "rust" in c_lower
-                    is_powdery = "mildew" in c_lower
-                    is_virus = any(kw in c_lower for kw in ["virus", "curl", "mosaic", "yellow", "deficiency", "aphid", "worm", "mite"])
-
-                    if is_h:
-                        if green_ratio > 0.45:
-                            score += green_ratio * 3.5
-                        if spot_ratio < 0.08 and rust_ratio < 0.08:
-                            score += 2.0
-                        else:
-                            score -= (spot_ratio + rust_ratio) * 2.5
-                    elif is_rust:
-                        score += rust_ratio * 4.5
-                        if rust_ratio > 0.04:
-                            score += 2.0
-                    elif is_powdery:
-                        score += powdery_ratio * 4.5
-                        if powdery_ratio > 0.04:
-                            score += 2.0
-                    elif is_virus:
-                        score += yellow_ratio * 4.0
-                        if yellow_ratio > 0.08:
-                            score += 2.0
-                    elif is_spot:
-                        score += spot_ratio * 4.0
-                        if spot_ratio > 0.04:
-                            score += 1.8
-
-                    scores.append((score, idx, c))
-
-                scores.sort(key=lambda x: x[0], reverse=True)
-                top_idx = scores[0][1]
-                raw_class_name = PLANT_57_CLASSES[top_idx]
-                confidence = min(98.5, max(82.0, round(scores[0][0] * 18.0, 1)))
-            except Exception as e:
-                logger.warning(f"Visual analysis exception: {str(e)}")
-                top_idx = 0
-                raw_class_name = PLANT_57_CLASSES[0]
-                confidence = 91.2
-
-            meta = get_disease_details(raw_class_name)
-            return {
-                "crop": meta["crop"],
-                "disease": meta["disease"],
-                "confidence": confidence,
-                "severity": meta["severity"],
-                "symptoms": meta["symptoms"],
-                "recommendations": meta["recommendations"],
-                "preventiveMeasures": meta["preventiveMeasures"],
-            }
+            logger.error("No AI models available for inference")
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail="CropX AI model is not available. Please ensure model files are present in backend/models/ and restart the server."
+            )
 
         # Step 1: Preprocess
         img_array = preprocess_image(file_bytes)
@@ -179,14 +97,7 @@ class ModelService:
         for model, name in [(self._model_1, "Model-1"), (self._model_2, "Model-2")]:
             if model is not None:
                 try:
-                    import torch
-                    with torch.no_grad():
-                        preds = model(img_array)
-                        if hasattr(preds, 'detach'):
-                            preds = preds.detach().cpu().numpy()
-                        elif hasattr(preds, 'numpy'):
-                            preds = preds.numpy()
-                    preds = np.asarray(preds)[0]
+                    preds = model.predict(img_array, verbose=0)[0]
                     all_predictions.append(preds)
                     top_idx = int(np.argmax(preds))
                     top_conf = float(np.max(preds)) * 100
