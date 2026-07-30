@@ -8,6 +8,8 @@ from database import engine, Base
 from config import settings
 from services.model_service import model_service
 from routers import auth, prediction, history, dashboard, profile, weather, community
+from leaf_scanner_camera_weather import render_leaf_scanner_page
+render_leaf_scanner_page()
 
 # Configure Logging
 
