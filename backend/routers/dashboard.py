@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from database import get_db
 import models
 import schemas
-from auth import get_current_user
+from auth import get_required_current_user
 
 router = APIRouter(tags=["Dashboard"])
 
@@ -11,7 +11,7 @@ router = APIRouter(tags=["Dashboard"])
 @router.get("/api/v1/dashboard", response_model=schemas.DashboardStats)
 def get_dashboard_stats(
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user)
+    current_user: models.User = Depends(get_required_current_user)
 ):
     """Calculate real-time dashboard statistics from SQLite for current user."""
     scans = db.query(models.Scan).filter(models.Scan.user_id == current_user.id).all()

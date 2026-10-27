@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from database import get_db
 import models
 import schemas
-from auth import get_current_user
+from auth import get_required_current_user
 
 router = APIRouter(tags=["Scan History"])
 
@@ -14,7 +14,7 @@ router = APIRouter(tags=["Scan History"])
 @router.get("/api/v1/history", response_model=List[schemas.ScanResponse])
 def get_history(
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user)
+    current_user: models.User = Depends(get_required_current_user)
 ):
     """Retrieve all scan history records belonging to the authenticated user."""
     scans = db.query(models.Scan).filter(models.Scan.user_id == current_user.id).order_by(models.Scan.date.desc()).all()
@@ -45,14 +45,19 @@ def get_history(
 def delete_history_item(
     scan_id: str,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user)
+    current_user: models.User = Depends(get_required_current_user)
 ):
     """Delete a scan record belonging to the authenticated user."""
-    scan = db.query(models.Scan).filter(models.Scan.id == scan_id, models.Scan.user_id == current_user.id).first()
+    scan = db.query(models.Scan).filter(models.Scan.id == scan_id).first()
     if not scan:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail="Scan record not found or access denied"
+            detail="Scan record not found"
+        )
+    if scan.user_id != current_user.id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You are not authorized to delete another user's scan record"
         )
     db.delete(scan)
     db.commit()

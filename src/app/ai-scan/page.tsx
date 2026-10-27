@@ -112,8 +112,8 @@ export default function AIScanPage() {
       });
 
       toast.success(`Diagnosis complete: ${response.disease}`);
-    } catch {
-      toast.error('Scan prediction failed. Please try again.');
+    } catch (err: any) {
+      toast.error(err?.message || 'Scan prediction failed. Please try again.');
     } finally {
       setAnalyzing(false);
     }

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: cropx-ai-backend
+    env: python
+    branch: main
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: '["https://crop-x-ai.vercel.app","http://localhost:4028","http://localhost:3000"]'

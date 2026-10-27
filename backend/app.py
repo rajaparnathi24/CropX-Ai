@@ -8,8 +8,6 @@ from database import engine, Base
 from config import settings
 from services.model_service import model_service
 from routers import auth, prediction, history, dashboard, profile, weather, community
-from leaf_scanner_camera_weather import render_leaf_scanner_page
-render_leaf_scanner_page()
 
 # Configure Logging
 
@@ -42,6 +40,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.CORS_ORIGINS,
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -69,6 +68,14 @@ def root_status():
         "api_v1": "/api/v1"
     }
 
+@app.get("/health")
+def health_check():
+    return {
+        "status": "healthy",
+        "models_loaded": getattr(model_service, "_models_loaded", False),
+        "database": "connected"
+    }
+
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
     logger.error(f"Global exception caught on {request.url}: {str(exc)}", exc_info=True)
@@ -78,5 +85,7 @@ async def global_exception_handler(request: Request, exc: Exception):
     )
 
 if __name__ == "__main__":
+    import os
     import uvicorn
-    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=False)

@@ -7,7 +7,36 @@ import {
   PostComment,
 } from '@/types';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+export const getApiBaseUrl = (): string => {
+  const envUrl = process.env.NEXT_PUBLIC_API_URL?.trim();
+  if (envUrl) {
+    const cleaned = envUrl.replace(/\/$/, '');
+    // In client browser on production (e.g. *.vercel.app), avoid mixed-content calls to localhost
+    if (typeof window !== 'undefined') {
+      const isLocalhost =
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1';
+      if (!isLocalhost && (cleaned.startsWith('http://localhost') || cleaned.startsWith('http://127.0.0.1'))) {
+        return '';
+      }
+    }
+    return cleaned;
+  }
+
+  // In browser on production without custom API URL, use relative URL (delegates to Next.js rewrites)
+  if (typeof window !== 'undefined') {
+    const isLocalhost =
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1';
+    if (!isLocalhost) {
+      return '';
+    }
+  }
+
+  return 'http://localhost:8000';
+};
+
+const API_BASE_URL = getApiBaseUrl();
 
 const TOKEN_KEY = 'cropx_access_token_v1';
 
@@ -103,14 +132,27 @@ export const apiService = {
   // AI Crop Scan Prediction Endpoint
   scan: {
     async predict(formData: FormData): Promise<PredictResponse> {
-      const response = await fetch(`${API_BASE_URL}/predict`, {
-        method: 'POST',
-        headers: getHeaders(false), // Multipart form data — no Content-Type header
-        body: formData,
-      });
+      const baseUrl = getApiBaseUrl();
+      const url = `${baseUrl}/predict`;
+      let response: Response;
+      try {
+        response = await fetch(url, {
+          method: 'POST',
+          headers: getHeaders(false), // Multipart form data — no Content-Type header
+          body: formData,
+        });
+      } catch (networkErr: any) {
+        throw new Error(
+          `Unable to connect to AI prediction server (${url}). Please ensure the CropX backend is running and reachable.`
+        );
+      }
 
       if (response.ok) {
         return await response.json();
+      }
+
+      if (response.status === 401) {
+        clearAuthToken();
       }
 
       // Parse error detail from backend response
@@ -118,7 +160,7 @@ export const apiService = {
       try {
         const errData = await response.json();
         if (errData.detail) {
-          errorMsg = errData.detail;
+          errorMsg = typeof errData.detail === 'string' ? errData.detail : JSON.stringify(errData.detail);
         }
       } catch {
         // Response body was not JSON

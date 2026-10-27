@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js build
+.next/
+out/
+build/
+dist/
+
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# SQLite Databases
+*.db
+*.sqlite3
+*.sqlite
+
+# Uploaded Files & Temporary Content
+uploads/
+backend/uploads/
+.temp/
+
+# IDE & OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

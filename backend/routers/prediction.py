@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 from database import get_db
 import models
 import schemas
-from auth import get_current_user
+from auth import get_optional_current_user
 from services.model_service import model_service
 from services.weather_service import get_indian_season
 from preprocess import validate_image_file, MAX_FILE_SIZE
@@ -21,15 +21,16 @@ router = APIRouter(tags=["AI Prediction"])
 async def predict(
     image: UploadFile = File(...),
     crop: Optional[str] = Form(None),
-    season: str = Form(None),
-    state: str = Form(None),
-    district: str = Form(None),
+    season: Optional[str] = Form(None),
+    state: Optional[str] = Form(None),
+    district: Optional[str] = Form(None),
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_user)
+    current_user: Optional[models.User] = Depends(get_optional_current_user)
 ):
     """
-    Accept uploaded crop leaf image, run MobileNetV3 inference, auto-tag Indian season,
-    and persist prediction record to SQLite.
+    Accept uploaded crop leaf image, run MobileNetV3 inference, auto-tag Indian season.
+    If caller is authenticated, persist prediction record to SQLite scan history.
+    If caller is anonymous, return diagnosis directly without saving to or exposing private user records.
     """
     file_bytes = await image.read()
     validate_image_file(file_bytes, image.filename)
@@ -52,24 +53,25 @@ async def predict(
 
     image_url = f"/uploads/{filename}"
 
-    # Persist Scan record to SQLite database
-    scan_record = models.Scan(
-        user_id=current_user.id,
-        image_url=image_url,
-        crop=prediction["crop"],
-        disease=prediction["disease"],
-        confidence=prediction["confidence"],
-        severity=prediction["severity"],
-        symptoms=json.dumps(prediction["symptoms"]),
-        recommendations=json.dumps(prediction["recommendations"]),
-        preventive_measures=json.dumps(prediction["preventiveMeasures"]),
-        season=calculated_season,
-        state=state or current_user.state,
-        district=district or current_user.district,
-        date=now
-    )
-    db.add(scan_record)
-    db.commit()
-    db.refresh(scan_record)
+    # Only persist to Scan history if user is authenticated
+    if current_user is not None:
+        scan_record = models.Scan(
+            user_id=current_user.id,
+            image_url=image_url,
+            crop=prediction["crop"],
+            disease=prediction["disease"],
+            confidence=prediction["confidence"],
+            severity=prediction["severity"],
+            symptoms=json.dumps(prediction["symptoms"]),
+            recommendations=json.dumps(prediction["recommendations"]),
+            preventive_measures=json.dumps(prediction["preventiveMeasures"]),
+            season=calculated_season,
+            state=state or current_user.state or "Gujarat",
+            district=district or current_user.district or "Junagadh",
+            date=now
+        )
+        db.add(scan_record)
+        db.commit()
+        db.refresh(scan_record)
 
     return prediction
