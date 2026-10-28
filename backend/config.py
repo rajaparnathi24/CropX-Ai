@@ -37,9 +37,32 @@ def _resolve_uploads_dir() -> str:
     backend_uploads = os.path.join(_BACKEND_DIR, "uploads")
     return backend_uploads
 
+DEFAULT_DEV_SECRET = "cropx_local_development_jwt_secret_key_2026_dev_only"
+
+def _resolve_secret_key() -> str:
+    env_secret = os.environ.get("SECRET_KEY")
+    is_prod = (
+        os.environ.get("RENDER") is not None
+        or os.environ.get("ENVIRONMENT", "").strip().lower() == "production"
+    )
+    if is_prod:
+        if (
+            not env_secret
+            or env_secret.strip() == ""
+            or env_secret == DEFAULT_DEV_SECRET
+            or "cropx_secret_key_production_2026" in env_secret
+        ):
+            raise ValueError(
+                "CRITICAL SECURITY CONFIGURATION ERROR: A secure, unique SECRET_KEY environment variable "
+                "must be configured in production (e.g. on Render). Default or placeholder keys are rejected."
+            )
+        return env_secret.strip()
+    return env_secret.strip() if env_secret else DEFAULT_DEV_SECRET
+
 class Settings(BaseSettings):
     PROJECT_NAME: str = "CropX AI Backend"
-    SECRET_KEY: str = "cropx_secret_key_production_2026_super_secure_jwt_token_key_india"
+    ENVIRONMENT: str = "development"
+    SECRET_KEY: str = _resolve_secret_key()
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
     DATABASE_URL: str = _resolve_database_url()
@@ -68,6 +91,7 @@ settings = Settings()
 settings.MODEL_PATH = _resolve_model_path("CropX_MobileNetV3_Final.keras")
 settings.MODEL_PATH_2 = _resolve_model_path("CropX_MobileNetV3_Final1.keras")
 settings.DATABASE_URL = _resolve_database_url()
+settings.SECRET_KEY = _resolve_secret_key()
 settings.UPLOADS_DIR = _resolve_uploads_dir()
 
 # Ensure uploads and models directories exist

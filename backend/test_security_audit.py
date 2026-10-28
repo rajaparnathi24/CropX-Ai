@@ -184,8 +184,58 @@ def run_security_audit():
         assert weather_res["condition"] is not None
         print(f"PASS: Public weather returned data without auth or privacy leak: {weather_res['temperature']}°C, {weather_res['condition']}", flush=True)
 
+
+        print("\n=== TEST 8: Production JWT Secret Validation & Insecure Fallback Prevention ===", flush=True)
+        from config import _resolve_secret_key, DEFAULT_DEV_SECRET
+        import os
+
+        # Subtest 8a: In production without SECRET_KEY -> must raise ValueError
+        orig_env = os.environ.get("ENVIRONMENT")
+        orig_render = os.environ.get("RENDER")
+        orig_secret = os.environ.get("SECRET_KEY")
+        try:
+            os.environ["ENVIRONMENT"] = "production"
+            os.environ.pop("SECRET_KEY", None)
+            os.environ.pop("RENDER", None)
+            try:
+                _resolve_secret_key()
+                assert False, "Should raise ValueError when SECRET_KEY missing in production"
+            except ValueError as ve:
+                assert "CRITICAL SECURITY CONFIGURATION ERROR" in str(ve)
+                print("PASS: Missing SECRET_KEY in production raises clear ValueError:", str(ve)[:65] + "...", flush=True)
+
+            # Subtest 8b: In production with placeholder key -> must raise ValueError
+            os.environ["SECRET_KEY"] = DEFAULT_DEV_SECRET
+            try:
+                _resolve_secret_key()
+                assert False, "Should raise ValueError when placeholder key used in production"
+            except ValueError as ve:
+                assert "CRITICAL SECURITY CONFIGURATION ERROR" in str(ve)
+                print("PASS: Default placeholder SECRET_KEY in production raises ValueError", flush=True)
+
+            # Subtest 8c: In production with strong unique key -> must succeed
+            valid_prod_key = "prod_random_secure_secret_key_2026_xyz_cropx_india"
+            os.environ["SECRET_KEY"] = valid_prod_key
+            resolved = _resolve_secret_key()
+            assert resolved == valid_prod_key
+            print("PASS: Strong SECRET_KEY in production is correctly resolved", flush=True)
+        finally:
+            # Restore environment
+            if orig_env is not None:
+                os.environ["ENVIRONMENT"] = orig_env
+            else:
+                os.environ.pop("ENVIRONMENT", None)
+            if orig_render is not None:
+                os.environ["RENDER"] = orig_render
+            else:
+                os.environ.pop("RENDER", None)
+            if orig_secret is not None:
+                os.environ["SECRET_KEY"] = orig_secret
+            else:
+                os.environ.pop("SECRET_KEY", None)
+
         print("\n====================================================================")
-        print("ALL 7 SECURITY & AUTHENTICATION AUDIT TESTS PASSED ON MAIN!")
+        print("ALL 8 SECURITY & AUTHENTICATION AUDIT TESTS PASSED ON MAIN!", flush=True)
         print("====================================================================")
     finally:
         db.close()
