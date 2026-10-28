@@ -23,9 +23,11 @@ def _resolve_database_url() -> str:
         return env_db
     root_db = os.path.join(os.path.dirname(_BACKEND_DIR), "cropx.db")
     if os.path.exists(root_db):
-        return f"sqlite:///{root_db.replace('\\', '/')}"
+        normalized_root = root_db.replace("\\", "/")
+        return f"sqlite:///{normalized_root}"
     backend_db = os.path.join(_BACKEND_DIR, "cropx.db")
-    return f"sqlite:///{backend_db.replace('\\', '/')}"
+    normalized_backend = backend_db.replace("\\", "/")
+    return f"sqlite:///{normalized_backend}"
 
 def _resolve_uploads_dir() -> str:
     env_uploads = os.environ.get("UPLOADS_DIR")
