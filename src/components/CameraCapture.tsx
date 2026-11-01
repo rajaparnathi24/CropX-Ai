@@ -17,7 +17,7 @@ interface CameraDevice {
   label: string;
 }
 
-const DEBUG = true;
+const DEBUG = process.env.NODE_ENV !== 'production';
 
 function log(...args: unknown[]): void {
   if (DEBUG) {
@@ -668,6 +668,20 @@ export default function CameraCapture({ isOpen, onClose, onCapture }: CameraCapt
         </div>
 
         <div className="relative bg-black aspect-[4/3] flex items-center justify-center overflow-hidden">
+          <video
+            ref={videoRef}
+            autoPlay
+            playsInline
+            muted
+            className={`absolute inset-0 w-full h-full object-cover ${
+              permissionState === 'granted' && !error && !capturedImage
+                ? 'visible'
+                : 'invisible'
+            }`}
+            style={{ transform: currentFacingMode === 'user' ? 'scaleX(-1)' : 'none' }}
+            aria-hidden="true"
+          />
+
           {permissionState === 'checking' && (
             <div className="flex flex-col items-center gap-2 text-white/70">
               <RefreshCw size={24} className="animate-spin" />
@@ -749,14 +763,6 @@ export default function CameraCapture({ isOpen, onClose, onCapture }: CameraCapt
                 />
               ) : (
                 <>
-                  <video
-                    ref={videoRef}
-                    autoPlay
-                    playsInline
-                    muted
-                    className="w-full h-full object-cover"
-                    style={{ transform: currentFacingMode === 'user' ? 'scaleX(-1)' : 'none' }}
-                  />
                   {(loading || !isVideoReady) && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/60">
                       <div className="flex flex-col items-center gap-2">
